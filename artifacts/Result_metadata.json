@@ -1,0 +1,72 @@
+{
+	"compiler": {
+		"version": "0.8.26+commit.8a97fa7a"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "result",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "num_",
+						"type": "uint256"
+					}
+				],
+				"name": "setResult",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Results.sol": "Result"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Results.sol": {
+			"keccak256": "0x1ae13a48da2614e1e7f1e5f7c8de3438e5a7153a0119d330644c305ec8e541a3",
+			"license": "LGPL-3.0-only",
+			"urls": [
+				"bzz-raw://49d7f7a56f900cec3500ba5361ab1d5029160d46ef9cfa0cc6aec424668280eb",
+				"dweb:/ipfs/QmRp1amPyGYzWPLnTRGoCyxN51Nx76qCjBmAvreCae9fnt"
+			]
+		}
+	},
+	"version": 1
+}

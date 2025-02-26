@@ -1,0 +1,114 @@
+{
+	"compiler": {
+		"version": "0.8.26+commit.8a97fa7a"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "result_",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "num1_",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "num2_",
+						"type": "uint256"
+					}
+				],
+				"name": "addNumbers",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "num1_",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "num2_",
+						"type": "uint256"
+					}
+				],
+				"name": "multiplyNumbers",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Adder.sol": "Adder"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Adder.sol": {
+			"keccak256": "0x11f9d77cefad48e267fbf029ab26ee665d99fa4df78a1fa51a6fe8d3d00dc946",
+			"license": "LGPL-3.0-only",
+			"urls": [
+				"bzz-raw://93ad71f1f32864856d925705097588cfb553990bc9b67ab2a3fd6db66c89d211",
+				"dweb:/ipfs/QmaaPHdko1r4Vk8kmtb7FMeq6F62iqdEAscAx4eaT6mGhZ"
+			]
+		},
+		"interfaces/IResult.sol": {
+			"keccak256": "0x8bee56c3ebc8214176c0eda011c02930606538a8e9ce7fcbb782c65a39c06bb2",
+			"license": "LGPL-3.0-only",
+			"urls": [
+				"bzz-raw://d38ec1574853fd2b0b81de23c4cb93391f7d78e8176ca7368a4f592f392570c5",
+				"dweb:/ipfs/QmQEwSyRBjmCax1o5ySfDrNqnWoXNMnud2Mp1otXsKgezk"
+			]
+		}
+	},
+	"version": 1
+}
