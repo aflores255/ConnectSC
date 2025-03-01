@@ -17,11 +17,15 @@ contract Adder{
     address result;
     address public owner;
     uint256 private opResult;
+    uint256 public fee;
+    address public  feeAdmin;
 
-    constructor(address result_){
+    constructor(address result_, address feeAdmin_){
 
         result = result_;
         owner = msg.sender;
+        fee = 5;
+        feeAdmin = feeAdmin_;
 
     }
 
@@ -31,6 +35,13 @@ contract Adder{
         
         if (msg.sender != owner) revert("Only owner can execute this function");
         _;
+    }
+
+    modifier  onlyFeeAdmin{
+
+        if (msg.sender != feeAdmin) revert("Only feeAdmin can execute this function");
+        _;
+
     }
     //Functions
 
@@ -42,6 +53,12 @@ contract Adder{
 
         IResult(result).setResult(opResult);
        
+
+    }
+
+    function setFee(uint256 newFee_) external onlyFeeAdmin {
+
+        fee = newFee_;
 
     }
 

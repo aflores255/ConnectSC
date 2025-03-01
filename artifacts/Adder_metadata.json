@@ -11,6 +11,11 @@
 						"internalType": "address",
 						"name": "result_",
 						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "feeAdmin_",
+						"type": "address"
 					}
 				],
 				"stateMutability": "nonpayable",
@@ -32,6 +37,32 @@
 				"name": "addNumbers",
 				"outputs": [],
 				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "fee",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "feeAdmin",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
 				"type": "function"
 			},
 			{
@@ -64,6 +95,19 @@
 				],
 				"stateMutability": "view",
 				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "newFee_",
+						"type": "uint256"
+					}
+				],
+				"name": "setFee",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
 			}
 		],
 		"devdoc": {
@@ -94,11 +138,11 @@
 	},
 	"sources": {
 		"Adder.sol": {
-			"keccak256": "0x11f9d77cefad48e267fbf029ab26ee665d99fa4df78a1fa51a6fe8d3d00dc946",
+			"keccak256": "0xf857777f774bafd958e32d7699caa0109c08f6d155a0ef12abe7e03426e5564d",
 			"license": "LGPL-3.0-only",
 			"urls": [
-				"bzz-raw://93ad71f1f32864856d925705097588cfb553990bc9b67ab2a3fd6db66c89d211",
-				"dweb:/ipfs/QmaaPHdko1r4Vk8kmtb7FMeq6F62iqdEAscAx4eaT6mGhZ"
+				"bzz-raw://c71aa3b9ce1af8048e550a93f687078cf8625f93991c6522be7c88f8c5044039",
+				"dweb:/ipfs/QmZ3wADwa2DwyLk4GygigYz9oXHQrEKSyYnEyyhZS4Hm7D"
 			]
 		},
 		"interfaces/IResult.sol": {
