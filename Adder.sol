@@ -9,6 +9,10 @@ pragma solidity 0.8.26;
 
 import "./interfaces/IResult.sol";
 
+//Custom Error
+
+error SenderNotMod(string message, address caller);
+
 // Contract
 
 contract Adder{
@@ -17,32 +21,26 @@ contract Adder{
     address result;
     address public owner;
     uint256 private opResult;
-    uint256 public fee;
-    address public  feeAdmin;
 
-    constructor(address result_, address feeAdmin_){
+    constructor(address result_){
 
         result = result_;
         owner = msg.sender;
-        fee = 5;
-        feeAdmin = feeAdmin_;
-
     }
 
     //Modifiers
 
     modifier onlyMod{
         
-        if (msg.sender != owner) revert("Only owner can execute this function");
+        if (msg.sender != owner) revert SenderNotMod("Only owner can execute this function", msg.sender);
         _;
     }
 
-    modifier  onlyFeeAdmin{
-
-        if (msg.sender != feeAdmin) revert("Only feeAdmin can execute this function");
+    modifier feeLimit(uint256 feeLimit_){
+        require(feeLimit_ > 0 && feeLimit_ < 100, "Fee must be between 1 and 100.");
         _;
-
     }
+
     //Functions
 
     // External
@@ -56,18 +54,20 @@ contract Adder{
 
     }
 
-    function setFee(uint256 newFee_) external onlyFeeAdmin {
-
-        fee = newFee_;
-
-    }
-
+   
     function multiplyNumbers(uint256 num1_, uint256 num2_) external onlyMod{
 
         opResult = num1_ * num2_;
 
         IResult(result).setResult(opResult);
 
+
+    }
+
+     
+    function setFee(uint256 newFee_) external feeLimit(newFee_){
+
+        IResult(result).setFee(newFee_);
 
     }
 

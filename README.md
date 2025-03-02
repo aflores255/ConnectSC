@@ -9,8 +9,8 @@ This project demonstrates the interaction between two smart contracts, `Adder.so
 |---------|-------------|
 | Smart Contract Interaction | Demonstrates communication between smart contracts via an interface. |
 | Arithmetic Operations | Provides addition and multiplication functionalities. |
-| Access Control | Restricts certain functions to the contract owner. |
-| External Calls | Uses an external contract (`Result.sol`) to store operation results. |
+| Access Control | Restricts certain functions to the contract owner or feeAdmin. |
+| External Calls | Uses an external contract (`Result.sol`) to store operation results and change the fee. |
 
 ## 📜 Contract Details
 
@@ -19,14 +19,18 @@ This project demonstrates the interaction between two smart contracts, `Adder.so
 #### **Result.sol**
 - Stores the result of arithmetic operations.
 - Provides a `setResult` function to update the stored result.
+- Change fee if the original caller is feeAdmin
 
 #### **Adder.sol**
 - Performs addition and multiplication.
 - Calls `setResult` on the `Result` contract to store computed values.
+- Calls `setFee` on the `Result` contract to change the fee using access control.
 - Implements an access control modifier (`onlyMod`) restricting multiplication to the contract owner.
+- Implements fee checker modifier (`feeLimit`) restricting fee value between 1 and 100.
 
 #### **IResult.sol** (Interface)
 - Defines `setResult(uint256 num_)` function to be implemented by `Result.sol`.
+- Defines `setFee(uint256 newFee_)` function to be implemented by `Result.sol`.
 
 ### 📡 Key Functions
 
@@ -34,12 +38,14 @@ This project demonstrates the interaction between two smart contracts, `Adder.so
 | Function | Description |
 |----------|-------------|
 | setResult(uint256 num_) | Updates the stored result with the given number. |
+| setFee(uint256 newFee_) | Updates the fee with the given number. |
 
 #### **Adder.sol**
 | Function | Description |
 |----------|-------------|
 | addNumbers(uint256 num1_, uint256 num2_) | Adds two numbers and stores the result in `Result.sol`. |
 | multiplyNumbers(uint256 num1_, uint256 num2_) | Multiplies two numbers and stores the result in `Result.sol`. Restricted to the contract owner. |
+| setFee(uint256 newFee_) | Updates the fee with the given number via `Result.sol` checking fee number previously. |
 
 ## 🛠️ How to Use
 
@@ -60,7 +66,8 @@ This project demonstrates the interaction between two smart contracts, `Adder.so
 1. **Set Result:** `setResult(uint256 num_)` (Only for `Result.sol`, but called externally by `Adder.sol`).
 2. **Addition:** `addNumbers(uint256 num1_, uint256 num2_)` to store the sum in `Result.sol`.
 3. **Multiplication:** `multiplyNumbers(uint256 num1_, uint256 num2_)` (Restricted to owner) to store the product in `Result.sol`.
-4. **Check Stored Result:** Call `result()` on `Result.sol` to get the stored value.
+4. **SetFee** `setFee(uint256 newFee_)` (Restricted to feeAdmin) to change the fee.
+5. **Check Stored Result:** Call `result()` on `Result.sol` to get the stored value.
 
 ## 📄 License
 This project is licensed under LGPL-3.0-only. Refer to the contract headers or the GNU Lesser General Public License documentation for more details.

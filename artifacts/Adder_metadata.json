@@ -11,15 +11,26 @@
 						"internalType": "address",
 						"name": "result_",
 						"type": "address"
-					},
-					{
-						"internalType": "address",
-						"name": "feeAdmin_",
-						"type": "address"
 					}
 				],
 				"stateMutability": "nonpayable",
 				"type": "constructor"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "message",
+						"type": "string"
+					},
+					{
+						"internalType": "address",
+						"name": "caller",
+						"type": "address"
+					}
+				],
+				"name": "SenderNotMod",
+				"type": "error"
 			},
 			{
 				"inputs": [
@@ -37,32 +48,6 @@
 				"name": "addNumbers",
 				"outputs": [],
 				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "fee",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "feeAdmin",
-				"outputs": [
-					{
-						"internalType": "address",
-						"name": "",
-						"type": "address"
-					}
-				],
-				"stateMutability": "view",
 				"type": "function"
 			},
 			{
@@ -138,19 +123,19 @@
 	},
 	"sources": {
 		"Adder.sol": {
-			"keccak256": "0xf857777f774bafd958e32d7699caa0109c08f6d155a0ef12abe7e03426e5564d",
+			"keccak256": "0x973614ab709b283c88b18c0e3b501be921b4038101018c764f0a29d6df6afadc",
 			"license": "LGPL-3.0-only",
 			"urls": [
-				"bzz-raw://c71aa3b9ce1af8048e550a93f687078cf8625f93991c6522be7c88f8c5044039",
-				"dweb:/ipfs/QmZ3wADwa2DwyLk4GygigYz9oXHQrEKSyYnEyyhZS4Hm7D"
+				"bzz-raw://7aebc443252472f01d6e9430928e31e59a279d08e1533186bbf55bc09da4c211",
+				"dweb:/ipfs/QmQt4WiGKA38SrzWfM8B3K8uk52Wqk6EnZHnu5krqtGE3t"
 			]
 		},
 		"interfaces/IResult.sol": {
-			"keccak256": "0x8bee56c3ebc8214176c0eda011c02930606538a8e9ce7fcbb782c65a39c06bb2",
+			"keccak256": "0x9a70e4efb2a8f2f36c06339356252891343267264c728fe1ea23eb5fdfb53999",
 			"license": "LGPL-3.0-only",
 			"urls": [
-				"bzz-raw://d38ec1574853fd2b0b81de23c4cb93391f7d78e8176ca7368a4f592f392570c5",
-				"dweb:/ipfs/QmQEwSyRBjmCax1o5ySfDrNqnWoXNMnud2Mp1otXsKgezk"
+				"bzz-raw://c564d04976b7f608d6381e4a386d6539377fed8806ccfdb1505b58e0f770f417",
+				"dweb:/ipfs/Qmd1oy7WBAKYakNiAXNjm8cP1SmutwJBg69kMjcvzSo4M5"
 			]
 		}
 	},
